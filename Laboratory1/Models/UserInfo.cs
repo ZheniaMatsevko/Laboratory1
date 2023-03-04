@@ -10,7 +10,7 @@ namespace Laboratory1.Models
     class UserInfo
     {
         private DateTime _dateOfBirth;
-        private int _age;
+        private int _age = -1;
         private WestZodiacSigns _westZodiacSign;
         private ChineseZodiacSigns _chineseZodiacSign;
 

@@ -9,6 +9,7 @@ namespace Laboratory1.Services
 {
     enum WestZodiacSigns
     {
+        None,
         Aries,
         Taurus,
         Gemini,
@@ -24,6 +25,7 @@ namespace Laboratory1.Services
     }
     enum ChineseZodiacSigns
     {
+        None,
         Rat,
         Ox,
         Tiger,
@@ -81,6 +83,23 @@ namespace Laboratory1.Services
                 return WestZodiacSigns.Sagittarius;
 
             return WestZodiacSigns.Capricorn;
+        }
+
+        public static ChineseZodiacSigns calculateChineseZodiacSign(DateTime date)
+        {
+            int year = date.Year;
+            if (year % 12 == 0) { return ChineseZodiacSigns.Monkey; }
+            else if (year % 12 == 1) { return ChineseZodiacSigns.Rooster; }
+            else if (year % 12 == 2) { return ChineseZodiacSigns.Dog; }
+            else if (year % 12 == 3) { return ChineseZodiacSigns.Pig; }
+            else if (year % 12 == 4) { return ChineseZodiacSigns.Rat; }
+            else if (year % 12 == 5) { return ChineseZodiacSigns.Ox; }
+            else if (year % 12 == 6) { return ChineseZodiacSigns.Tiger; }
+            else if (year % 12 == 7) { return ChineseZodiacSigns.Rabbit; }
+            else if (year % 12 == 8) { return ChineseZodiacSigns.Dragon; }
+            else if (year % 12 == 9) { return ChineseZodiacSigns.Snake; }
+            else if (year % 12 == 10) { return ChineseZodiacSigns.Horse; }
+            return ChineseZodiacSigns.Goat;
         }
 
 
