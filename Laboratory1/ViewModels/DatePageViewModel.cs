@@ -24,6 +24,38 @@ namespace Laboratory1.ViewModels
             }
         }
 
+        public string Age
+        {
+            get { return _user.Age == -1 ? "" : _user.Age.ToString(); }
+            set
+            {
+                _user.Age = int.Parse(value);
+                OnPropertyChanged();
+            }
+        }
+        public string WestZodiacSign
+        {
+            get
+            {
+                return (_user.WestZodiacSign == WestZodiacSigns.None) ? "" : _user.WestZodiacSign.ToString();
+            }
+            set
+            {
+                _user.WestZodiacSign = (WestZodiacSigns)Enum.Parse(typeof(WestZodiacSigns), value);
+                OnPropertyChanged();
+            }
+        }
+
+        public string ChineseZodiacSign
+        {
+            get { return (_user.ChineseZodiacSign == ChineseZodiacSigns.None) ? "" : _user.ChineseZodiacSign.ToString(); }
+            set
+            {
+                _user.ChineseZodiacSign = (ChineseZodiacSigns)Enum.Parse(typeof(ChineseZodiacSigns), value);
+                OnPropertyChanged();
+            }
+        }
+
         public DateTime? ChosenDate
         {
             get
@@ -33,9 +65,7 @@ namespace Laboratory1.ViewModels
             set
             {
                 if (_chosenDate.Value.CompareTo(value) != 0)
-                {
                     ProceedDate(value);
-                }
             }
         }
 
@@ -58,32 +88,6 @@ namespace Laboratory1.ViewModels
             if(_chosenDate.Value.Day==DateTime.Today.Day && _chosenDate.Value.Month == DateTime.Today.Month)
                 MessageBox.Show("Happy birthday!!!");
 
-        }
-
-        public string Age
-        {
-            get { return _user.Age==-1 ? "" : _user.Age.ToString(); }
-            set { _user.Age = Int32.Parse(value);
-                OnPropertyChanged();
-            }
-        }
-        public string WestZodiacSign
-        {
-            get 
-            { 
-                return (_user.WestZodiacSign==WestZodiacSigns.None) ? "" : _user.WestZodiacSign.ToString(); 
-            }
-            set { _user.WestZodiacSign = (WestZodiacSigns)Enum.Parse(typeof(WestZodiacSigns), value);
-                OnPropertyChanged();
-            }
-        }
-
-        public string ChineseZodiacSign
-        {
-            get { return (_user.ChineseZodiacSign == ChineseZodiacSigns.None) ? "" : _user.ChineseZodiacSign.ToString(); }
-            set { _user.ChineseZodiacSign = (ChineseZodiacSigns)Enum.Parse(typeof(ChineseZodiacSigns), value);
-                OnPropertyChanged();
-            }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

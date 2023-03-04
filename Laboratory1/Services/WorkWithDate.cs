@@ -41,22 +41,17 @@ namespace Laboratory1.Services
     }
     static class WorkWithDate
     {
-
         public static bool checkDate(DateTime date)
         {
             return (date.CompareTo(DateTime.Today) < 0 && date.Year > 1900);
         }
-
         public static int calculateAge(DateTime date)
         {
             int age = DateTime.Today.Year - date.Year;
-
             if (date.Date > DateTime.Today.AddYears(-age)) 
                 age--;
-
             return age;
         }
-
         public static WestZodiacSigns calculateWestZodiacSign(DateTime date)
         {
             if((date.Month==1 && date.Day>=20) || (date.Month==2 && date.Day<=18))
@@ -101,8 +96,5 @@ namespace Laboratory1.Services
             else if (year % 12 == 10) { return ChineseZodiacSigns.Horse; }
             return ChineseZodiacSigns.Goat;
         }
-
-
-
     }
 }
