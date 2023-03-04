@@ -1,4 +1,4 @@
-﻿using Laboratory1.Views;
+﻿using Laboratory1.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,17 +14,17 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Laboratory1
+namespace Laboratory1.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for DatePageView.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class DatePageView : UserControl
     {
-        public MainWindow()
+        public DatePageView()
         {
             InitializeComponent();
-            Content = new DatePageView();
+            DataContext = new DatePageViewModel();
         }
     }
 }
